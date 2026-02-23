@@ -1,189 +1,256 @@
-# 🌐 Week 6: Introduction to HTML & CSS
+# 🌐 HTML & CSS Walkthrough – Artificial Intelligence Webpage
 
-Welcome to your first web development assignment!
-
-In this project, you will practice the basic building blocks of websites using **HTML** and **CSS**.
+This document walks you through the structure and styling of the AI webpage we built in class.
 
 ---
 
-## 🎯 Objective
+# 🧠 PART 1: Understanding index.html
 
-Create a simple webpage that demonstrates your understanding of:
+HTML gives your webpage its structure.
 
-- Headings
-- Paragraphs
-- Images
-- Links
-- Lists
-- Div containers
-- Buttons
-- Basic CSS styling
+Think of HTML as the skeleton of the website.
 
 ---
 
-## 🧱 Part 1: HTML Basics
-
-Inside your `index.html` file:
-
-### 1️⃣ Add a Main Heading
-
-Create an `<h1>` with your website title.
-
-Example:
+## 1️⃣ The Document Structure
 
 ```html
-<h1>Welcome to My Website</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introduction to Artificial Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 ```
+
+- `<!DOCTYPE html>` tells the browser we are using HTML5.
+- `<html>` wraps the entire webpage.
+- `<head>` contains invisible page information.
+- `<title>` sets the browser tab title.
+- `<link>` connects the HTML file to the CSS file.
+
+Without the `<link>` tag, your styling will not work.
 
 ---
 
-### 2️⃣ Add a Paragraph
-
-Under your heading, add a paragraph introducing your page.
+## 2️⃣ The Header Section
 
 ```html
-<p>This website is about Artificial Intelligence.</p>
+<header>
+    <h1>Artificial Intelligence</h1>
+    <p class="subtitle">The Future of Technology</p>
+</header>
 ```
+
+- `<header>` groups top content.
+- `<h1>` is the main heading.
+- `<p>` is a paragraph.
+- `class="subtitle"` allows CSS styling.
+
+Classes connect HTML to CSS.
 
 ---
 
-### 3️⃣ Add an Image
-
-Insert an image using the `<img>` tag.
+## 3️⃣ The Introduction Section
 
 ```html
-<img src="image.jpg" alt="AI Image">
+<section class="intro">
+    <h2>What is AI?</h2>
+    <p>Artificial Intelligence (AI) is the simulation of human intelligence in machines.</p>
+    <img src="IMAGE_URL" alt="AI Robot" class="main-image">
+</section>
 ```
 
-You may use an online image URL if needed.
+- `<section>` groups related content.
+- `<h2>` is a secondary heading.
+- `<img>` adds an image.
+- `alt` improves accessibility.
+- `class="main-image"` connects to CSS styling.
 
 ---
 
-### 4️⃣ Create a List
+## 4️⃣ The Cards Section
 
-Add either:
+```html
+<div class="card-container">
+    <div class="card">
+        <h3>Healthcare</h3>
+        <p>AI helps doctors detect diseases faster.</p>
+        <button>Learn More</button>
+    </div>
+</div>
+```
 
-- An unordered list (`<ul>`)
-- Or an ordered list (`<ol>`)
+- `<div>` creates containers.
+- `class="card-container"` groups cards.
+- `class="card"` styles each card.
+- `<button>` adds interactivity.
+
+---
+
+## 5️⃣ Lists
 
 ```html
 <ul>
-  <li>AI in healthcare</li>
-  <li>AI in cars</li>
-  <li>AI in gaming</li>
+    <li>AI can recognize faces.</li>
+    <li>AI can generate art.</li>
 </ul>
 ```
 
+- `<ul>` creates an unordered list.
+- `<li>` creates list items.
+
 ---
 
-### 5️⃣ Add a Link
-
-Create a clickable link using the `<a>` tag.
+## 6️⃣ Footer
 
 ```html
-<a href="https://openai.com">Visit OpenAI</a>
+<footer>
+    <p>Created by Future Developers 🚀</p>
+    <a href="https://openai.com" target="_blank">Visit OpenAI</a>
+</footer>
 ```
+
+- `<footer>` holds bottom content.
+- `<a>` creates links.
+- `target="_blank"` opens in a new tab.
 
 ---
 
-### 6️⃣ Add a Button
+# 🎨 PART 2: Understanding style.css
 
-Add a simple button to your page.
+CSS controls the design of the webpage.
 
-```html
-<button>Click Me</button>
-```
+Think of CSS as the clothes and design of your website.
 
 ---
 
-## 🎨 Part 2: CSS Basics
-
-Inside your `style.css` file:
-
-### 1️⃣ Change the Background Color
+## 1️⃣ Page Styling
 
 ```css
 body {
-  background-color: lightblue;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f9;
+    color: #333;
 }
 ```
 
+- `font-family` changes font.
+- `margin: 0` removes default spacing.
+- `background-color` sets page color.
+- `color` sets default text color.
+
 ---
 
-### 2️⃣ Change Text Color
+## 2️⃣ Header Styling
 
 ```css
-h1 {
-  color: darkblue;
+header {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 30px;
 }
 ```
 
+- `background-color` changes background.
+- `color` changes text color.
+- `text-align` centers text.
+- `padding` adds spacing inside the box.
+
 ---
 
-### 3️⃣ Add Padding and Margin
+## 3️⃣ Styling Classes
 
 ```css
-div {
-  padding: 20px;
-  margin: 10px;
+.subtitle {
+    font-style: italic;
+    color: #9ca3af;
 }
 ```
 
+The `.` indicates a class selector.
+
 ---
 
-### 4️⃣ Style a Button
+## 4️⃣ Layout with Flexbox
+
+```css
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+```
+
+- `display: flex` activates flex layout.
+- `justify-content` aligns items horizontally.
+- `gap` creates space between items.
+- `flex-wrap` allows wrapping on smaller screens.
+
+---
+
+## 5️⃣ Card Styling
+
+```css
+.card {
+    background-color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+```
+
+- `border-radius` creates rounded corners.
+- `box-shadow` adds depth.
+- `width` controls card size.
+
+---
+
+## 6️⃣ Buttons
 
 ```css
 button {
-  background-color: blue;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 ```
 
----
-
-### 5️⃣ Add a Hover Effect
+Hover effect:
 
 ```css
 button:hover {
-  background-color: darkblue;
+    background-color: #1e40af;
 }
 ```
 
 ---
 
-## 🏫 In-Class Assignment (Required)
+# 🏫 In-Class Assignment (Required)
 
-Tailor the page to your liking.
+Modify the page and make it about **you or your interests**.
 
-👉 Make the website about **you or your interests**.
-
-Some ideas:
-- Your favorite hobby
-- A sport you like
+Ideas:
+- Your hobbies
+- A favorite sport
 - A favorite video game
 - Music you enjoy
 - Your future career goals
 
-Be creative and personalize your design!
+Be creative and personalize your design.
 
 ---
 
-## 📤 Submission Instructions
-
-1. Save your files.
-2. Commit your changes.
-3. Push to your repository.
-4. Make sure your webpage loads correctly in Codespaces.
-
----
-
-## 🚀 Reminder
+# 🚀 Final Reminder
 
 HTML = Structure  
 CSS = Design  
 
-Have fun building your first website!
+Together, they create complete websites.
